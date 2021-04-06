@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Create from "../views/Create.vue"
+import Feed from "../views/Feed.vue"
+import Details from "../views/Details.vue"
 
 Vue.use(VueRouter);
 
@@ -13,17 +16,17 @@ const routes = [
   {
     path: "/create",
     name: "Create",
-    component: Home,
+    component: Create,
   },
   {
     path: "/feed",
     name: "Feed",
-    component: Home,
+    component: Feed,
   },
   {
     path: "/meme/:memeId",
     name: "Details",
-    component: Home,
+    component: Details,
   },
 ];
 

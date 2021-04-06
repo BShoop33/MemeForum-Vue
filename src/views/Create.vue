@@ -1,9 +1,23 @@
 <template>
-  <h1>This is the Create page</h1>
+  <div>
+    <h1 class="test">This is the Create page</h1>
+    <h1 class="test">This is the Create page</h1>
+    <h1 class="test">This is the Create page</h1>
+    <h1 class="test">This is the Create page</h1>
+    <h1 class="test">This is the Create page</h1>
+    <h1 class="test">This is the Create page</h1>
+    <h1 class="test">This is the Create page</h1>
+    <h1 class="test">This is the Create page</h1>
+  </div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style></style>
+<style>
+.test {
+  font-size: 40pt;
+  color: black;
+}
+</style>
