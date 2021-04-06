@@ -1,13 +1,6 @@
 <template>
   <div>
-    <h1>This is the Details page</h1>
-    <h1>This is the Details page</h1>
-    <h1>This is the Details page</h1>
-    <h1>This is the Details page</h1>
-    <h1>This is the Details page</h1>
-    <h1>This is the Details page</h1>
-    <h1>This is the Details page</h1>
-    <h1>This is the Details page</h1>
+    <div class="navbar_spacer"></div>
   </div>
 </template>
 
@@ -15,4 +8,8 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+.navbar_spacer {
+  height: 5em;
+}
+</style>
