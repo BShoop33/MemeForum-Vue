@@ -1,7 +1,6 @@
 <template>
   <v-container>
-    <div class="navbar_spacer"></div>
-    <v-form @submit.prevent="generateMeme">
+    <v-form class="memeForm" @submit.prevent="generateMeme">
       <v-row justify="space-between">
         <v-col>
           <v-text-field
@@ -36,22 +35,27 @@
     </v-form>
 
     <div v-if="showMeme">
-      <meme
-        class="mx-auto"
-        :top="topText"
-        :bottom="bottomText"
-        :imageURL="imageURL"
-        :width="800"
-      />
+      <div class="memeImageContainer">
+        <meme
+          class="memeImage"
+          :top="topText"
+          :bottom="bottomText"
+          :imageURL="imageURL"
+        />
+      </div>
     </div>
-    <div class="text-center mt-3">
-      <v-btn type="button" @click="saveMeme" color="primary">
+    <div class="text-center mt-10 mb-10">
+      <v-btn
+        :disabled="!imageURL"
+        type="button"
+        @click="saveMeme"
+        color="primary"
+      >
         Save this meme
       </v-btn>
     </div>
   </v-container>
 </template>
-
 
 <script>
 import Meme from "../components/Meme.vue";
@@ -85,9 +89,14 @@ export default {
 };
 </script>
 
-<style>
-.navbar_spacer {
-  height: 5em;
+<style scoped>
+.memeForm {
+  margin-top: 5em;
+}
+
+.memeImageContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .test {
