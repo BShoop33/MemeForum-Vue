@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="navbar_spacer"></div>
+    <div class="greeting">
+      <h1>Welcome to the MemeForum!</h1>
+    </div>
   </div>
 </template>
 
@@ -8,8 +10,10 @@
 export default {};
 </script>
 
-<style>
-.navbar_spacer {
-  height: 5em;
+<style scoped>
+.greeting {
+  display: flex;
+  justify-content: center;
+  margin-top: 15em;
 }
 </style>

@@ -1,11 +1,14 @@
 <template>
-  <div v-if="meme">
-    <meme
-      class="mx-auto"
-      :top="meme.topText"
-      :bottom="meme.bottomText"
-      :imageURL="meme.imageURL"
-    />
+  <div>
+    <div v-if="meme" class="memeImageContainer">
+      <meme
+        class="memeImage"
+        :top="meme.topText"
+        :bottom="meme.bottomText"
+        :imageURL="meme.imageURL"
+      />
+    </div>
+    <div class="footer"></div>
   </div>
 </template>
 
@@ -29,8 +32,20 @@ export default {
 };
 </script>
 
-<style>
-.navbar_spacer {
-  height: 5em;
+<style scoped>
+.footer {
+  height: 2em;
+}
+
+.memeImage {
+  border: 4px;
+  border-color: black;
+  border-style: solid;
+}
+
+.memeImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5.75em;
 }
 </style>

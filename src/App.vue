@@ -2,12 +2,12 @@
   <v-app>
     <router-view />
     <v-app-bar app color="teal darken-2" dark>
-      <h1>Vue Meme Forum</h1>
+      <h1 class="header" @click="navigateHome">Vue Meme Forum</h1>
       <v-spacer></v-spacer>
       <router-link to="/create">
         <v-btn text> Create </v-btn>
       </router-link>
-      |
+
       <router-link to="/feed">
         <v-btn text> Memes </v-btn>
       </router-link>
@@ -16,10 +16,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    navigateHome() {
+      this.$router.push("/");
+    },
+  },
+};
 </script>
 
 <style scoped>
+.header {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }
