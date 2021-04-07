@@ -1,16 +1,39 @@
 <template>
-  <div>
-    <div class="navbar_spacer"></div>
-    <v-img :src="imageURL" :width="800">
-      <h1 id="top">{{ top.toUpperCase() }}</h1>
-      <h1 id="bottom">{{ bottom.toUpperCase() }}</h1>
-    </v-img>
-  </div>
+  <v-container>
+    <div v-for="meme in memes" :key="meme.id" class="py-5">
+      <meme
+        class="mx-auto"
+        :top="meme.topText"
+        :bottom="meme.bottomText"
+        :imageURL="meme.imageURL"
+      />
+    </div>
+  </v-container>
 </template>
 
 <script>
+import { db } from "../firebase";
+import Meme from "../components/Meme";
+
 export default {
-  props: ["top", "bottom", "imageURL"],
+  components: { Meme },
+  data() {
+    return {
+      memes: [],
+    };
+  },
+
+  mounted() {
+    db.collection("memes").onSnapshot((snap) => {
+      const memes = snap.docs.map((doc) => {
+        return {
+          ...doc.data(),
+          id: doc.id,
+        };
+      });
+      this.memes = memes;
+    });
+  },
 };
 </script>
 
